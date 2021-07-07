@@ -1,0 +1,40 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .searchBar {
+    margin-top: 30px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 10px;
+    border-bottom: 1px solid #cbcbcb;
+
+    .search_icon {
+      font-size: 30px;
+      color: gray;
+      padding-right: 5px;
+      margin-right: 5px;
+    }
+
+    .input {
+      padding: 7px 0;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #f9f9f9;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid #f9f9f9;
+      }
+
+      &::placeholder {
+        color: #cbcbcb;
+      }
+    }
+  }
+}

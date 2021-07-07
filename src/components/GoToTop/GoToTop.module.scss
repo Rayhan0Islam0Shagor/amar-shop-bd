@@ -1,0 +1,32 @@
+.go_to_top {
+  position: fixed;
+  cursor: pointer;
+  bottom: 15px;
+  right: 15px;
+  background: linear-gradient(#ffc764, #ffc664a6);
+  z-index: 100;
+  width: 45px;
+  height: 45px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(#ffc664a6, #ffc764);
+  }
+
+  .icon {
+    color: #2b2b2b;
+    font-size: 35px;
+    transform: translateY(3px);
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

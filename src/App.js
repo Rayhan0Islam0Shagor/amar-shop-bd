@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Loading from "./components/Loading/Loading";
+
+// bootstrap styles
+import "./App.scss";
+
+// routes (Code Splitting and Pre-fetching)
+const Cart = lazy(() => import("./routes/Cart"));
+const Home = lazy(() => import("./routes/Home"));
+const NotFound = lazy(() => import("./routes/NotFound"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/cart" component={Cart} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </>
   );
 }
 
