@@ -19,7 +19,9 @@ const Products = ({ product }) => {
       </div>
 
       <div className={styles.addToCart}>
-        <button className="btn btn-primary">ADD TO CART</button>
+        <button className="btn btn-warning font-weight-bold">
+          ADD TO CART
+        </button>
       </div>
     </div>
   );
